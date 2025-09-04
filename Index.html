@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apex Legal Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --primary: #23336A;
+      --secondary: #25D366;
+      --danger: #e94444;
+      --muted: #eef0f4;
+    }
+    body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background:var(--muted);}
+    .header {background:var(--primary); color:#fff; padding:26px 0 14px 0; text-align:center;}
+    .header img { width: 54px; margin-bottom: 8px; }
+    h1 {margin: 5px 0;}
+    h2 {color:var(--primary);}
+    .tabs { display: flex; justify-content:center; background: #fff; border-radius: 0 0 12px 12px; box-shadow: 0 1px 6px #b1b3be1a;}
+    .tab-btn {
+      flex:1 1 120px; padding:16px 8px;
+      background:#fff; border:none; border-bottom: 2px solid transparent;
+      color: var(--primary); font-size: 1em; font-weight: 600; cursor:pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .tab-btn.active { border-bottom: 2.5px solid var(--secondary); background: #f6fff9;}
+    .content { background:#fff; max-width:820px; margin:28px auto 0 auto; border-radius:12px; box-shadow: 0 2px 16px #b1b3be22; padding:26px 26px 32px 26px;}
+    .contact-card {text-align:center; margin: 28px 0 20px 0;}
+    .contact-btns { display: flex; justify-content:center; flex-wrap: wrap; gap:14px; margin-top:12px;}
+    .cta-btn {
+      background:var(--primary); color:#fff; border:none; padding:12px 22px;
+      border-radius:7px; font-size:1em; font-weight:bold;
+      text-decoration:none; cursor:pointer; box-shadow:0 0 2px #ccc; transition: background 0.2s;
+      margin-bottom: 4px;
+    }
+    .cta-btn.whatsapp {background:var(--secondary);}
+    .cta-btn.pay {background:var(--danger);}
+    .cta-btn:hover { opacity:0.92;}
+    .service-section { margin-bottom:22px;}
+    ul {margin:8px 0 0 15px;}
+    .why-choose {background:#f9f9fc; padding:18px; border-radius:9px; margin-top:22px; box-shadow: 0 0 8px #b1b3be11;}
+    .services-list {display: flex; flex-wrap:wrap; gap:32px; }
+    .tab-pane {display: none;}
+    .tab-pane.active {display:block;}
+    @media (max-width:600px){
+      .content {padding:9px 2vw 20px 2vw;}
+      .tabs {flex-direction:column;}
+    }
+  </style>
+</head>
+<body>
+  <!--Header-->
+  <div class="header">
+    <img src="https://cdn-icons-png.flaticon.com/512/453/453285.png" alt="Apex Legal Icon" loading="lazy">
+    <h1>APEX LEGAL SUPPORT</h1>
+    <div>Your Trusted Partner in Business Compliance & Growth</div>
+  </div>
+
+  <!--Tabs-->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab(event, 'about')">About</button>
+    <button class="tab-btn" onclick="showTab(event, 'services')">Services</button>
+    <button class="tab-btn" onclick="showTab(event, 'contact')">Contact</button>
+  </div>
+
+  <div class="content">
+    <!-- ABOUT Tab -->
+    <div id="about" class="tab-pane active">
+      <h2>Who We Are</h2>
+      <p>
+        At <b>Apex Legal Support</b>, we simplify the legal and regulatory landscape so businesses can focus on growth. Whether launching a startup or managing an enterprise, our consulting ensures full compliance, strategic positioning, and readiness to scale.
+      </p>
+      <div class="why-choose">
+        <h3>Why Choose Apex Legal Support?</h3>
+        <ul>
+          <li>End-to-End Compliance Solutions</li>
+          <li>Fast Turnaround & Transparent Processes</li>
+          <li>Expert Guidance Across Legal & Regulatory Sectors</li>
+          <li>Quick & Hassle-Free Process</li>
+          <li>Affordable Packages</li>
+          <li>100% Legal Compliance</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SERVICES Tab -->
+    <div id="services" class="tab-pane">
+      <h2>Our Services</h2>
+      <div class="services-list">
+
+        <div class="service-section">
+          <h3>Business Registrations & Certifications</h3>
+          <ul>
+            <li>GST Registration & Return Filing</li>
+            <li>MSME/Udyam Registration</li>
+            <li>ISO Certification</li>
+            <li>Trade License & Health Trade License</li>
+            <li>Startup India Registration</li>
+          </ul>
+        </div>
+
+        <div class="service-section">
+          <h3>Labour Law & Employee Welfare</h3>
+          <ul>
+            <li>PF & ESI Registration and Monthly Returns</li>
+            <li>Complete Labour Compliance Management</li>
+            <li>Shops & Establishment Act Registration</li>
+            <li>Contract Labour Licensing</li>
+          </ul>
+        </div>
+
+        <div class="service-section">
+          <h3>Government & Tender Support</h3>
+          <ul>
+            <li>PF & ESI Registration and Monthly Returns</li>
+            <li>Complete Labour Compliance Management</li>
+            <li>Shops & Establishment Act Registration</li>
+          </ul>
+        </div>
+
+        <div class="service-section">
+          <h3>Partnership Registration Services</h3>
+          <ul>
+            <li>Partnership Firm Registration</li>
+            <li>PAN & TAN Assistance</li>
+            <li>Partnership Deed Drafting</li>
+            <li>GST & MSME Registration</li>
+            <li>Compliance & Legal Support</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:22px;">
+        <label for="serviceDrop"><b>Need Help With a Specific Service?</b></label><br>
+        <select id="serviceDrop" style="margin-top:7px; padding:7px; font-size:1em;">
+          <option value="">Select Service</option>
+          <option>GST Registration & Return Filing</option>
+          <option>MSME/Udyam Registration</option>
+          <option>ISO Certification</option>
+          <option>Trade License & Health Trade License</option>
+          <option>Startup India Registration</option>
+          <option>PF & ESI Registration</option>
+          <option>Complete Labour Compliance Management</option>
+          <option>Shops & Establishment Act Registration</option>
+          <option>Contract Labour Licensing</option>
+          <option>Partnership Firm Registration</option>
+          <option>PAN & TAN Assistance</option>
+          <option>Partnership Deed Drafting</option>
+          <option>Compliance & Legal Support</option>
+        </select>
+        <div class="contact-btns" style="margin-top:16px;">
+          <a href="tel:+919810961385" class="cta-btn">Call Akshay</a>
+          <a href="tel:+918745095028" class="cta-btn">Call Aman</a>
+          <a id="wsbtn" class="cta-btn whatsapp" href="https://wa.me/919810961385?text=I'm%20interested%20in%20Apex%20Legal%20Support%20services" target="_blank">WhatsApp Akshay</a>
+          <a href="#" class="cta-btn pay" id="payBtn">Pay Online</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT Tab -->
+    <div id="contact" class="tab-pane">
+      <h2>Contact Us</h2>
+      <div class="contact-card">
+        <div style="font-size:1.15em;"><b>Akshay Kumar</b></div>
+        <a href="mailto:apexlegalsuport@gmail.com" style="color:var(--primary);text-decoration:none;">apexlegalsuport@gmail.com</a><br>
+        <span style="font-size:1.08em;font-weight:600;">+91 9810961385</span><br>
+        <span style="font-size:1.08em;font-weight:600;">+91 8745095028</span>
+        <div class="contact-btns" style="margin-top:16px;">
+          <a href="tel:+919810961385" class="cta-btn">Call Akshay</a>
+          <a href="tel:+918745095028" class="cta-btn">Call Aman</a>
+          <a class="cta-btn whatsapp" href="https://wa.me/919810961385?text=I%20want%20to%20inquire%20about%20services" target="_blank">WhatsApp Akshay</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Footer-->
+  <div style="text-align:center; color:#888; padding:20px 0 8px 0; font-size:1em;">
+    &copy; 2025 APEX LEGAL SUPPORT
+  </div>
+  <script>
+    // Tabs logic
+    function showTab(evt, tab) {
+      document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
+      evt.currentTarget.classList.add('active');
+      document.querySelectorAll('.tab-pane').forEach(pane=>pane.classList.remove('active'));
+      document.getElementById(tab).classList.add('active');
+    }
+    // WhatsApp dynamic on Service select
+    const wsbtn = document.getElementById('wsbtn');
+    const serviceDrop = document.getElementById('serviceDrop');
+    if(wsbtn && serviceDrop) {
+      serviceDrop.addEventListener('change', function() {
+        var service = encodeURIComponent('I am interested in: ' + (serviceDrop.value || 'Apex Legal Support services') + '. Please connect.');
+        wsbtn.href = 'https://wa.me/919810961385?text=' + service;
+      });
+    }
+    // Payment Button logic
+    document.getElementById('payBtn').onclick = function(e){
+      e.preventDefault();
+      // Replace this URL with your payment provider or payment page link
+      window.open('https://your-payment-link.com','_blank');
+    };
+  </script>
+</body>
+</html>
