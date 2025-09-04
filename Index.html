@@ -1,204 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Apex Legal Support</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Consult Chartered Services — Professional CA & Business Support</title>
+  <meta name="description" content="GST, ITR, ROC filings, payroll, bookkeeping and CA advisory. Fast, reliable & affordable Chartered Accountant services." />
   <style>
-    :root {
-      --primary: #23336A;
-      --secondary: #25D366;
-      --danger: #e94444;
-      --muted: #eef0f4;
+    :root{
+      --primary:#0b3a66; --accent:#047857; --muted:#6b7280;
+      --bg:#f5f7fb; --card:#ffffff; --glass: rgba(255,255,255,0.6);
+      --radius:12px;
     }
-    body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background:var(--muted);}
-    .header {background:var(--primary); color:#fff; padding:26px 0 14px 0; text-align:center;}
-    .header img { width: 54px; margin-bottom: 8px; }
-    h1 {margin: 5px 0;}
-    h2 {color:var(--primary);}
-    .tabs { display: flex; justify-content:center; background: #fff; border-radius: 0 0 12px 12px; box-shadow: 0 1px 6px #b1b3be1a;}
-    .tab-btn {
-      flex:1 1 120px; padding:16px 8px;
-      background:#fff; border:none; border-bottom: 2px solid transparent;
-      color: var(--primary); font-size: 1em; font-weight: 600; cursor:pointer;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .tab-btn.active { border-bottom: 2.5px solid var(--secondary); background: #f6fff9;}
-    .content { background:#fff; max-width:820px; margin:28px auto 0 auto; border-radius:12px; box-shadow: 0 2px 16px #b1b3be22; padding:26px 26px 32px 26px;}
-    .contact-card {text-align:center; margin: 28px 0 20px 0;}
-    .contact-btns { display: flex; justify-content:center; flex-wrap: wrap; gap:14px; margin-top:12px;}
-    .cta-btn {
-      background:var(--primary); color:#fff; border:none; padding:12px 22px;
-      border-radius:7px; font-size:1em; font-weight:bold;
-      text-decoration:none; cursor:pointer; box-shadow:0 0 2px #ccc; transition: background 0.2s;
-      margin-bottom: 4px;
-    }
-    .cta-btn.whatsapp {background:var(--secondary);}
-    .cta-btn.pay {background:var(--danger);}
-    .cta-btn:hover { opacity:0.92;}
-    .service-section { margin-bottom:22px;}
-    ul {margin:8px 0 0 15px;}
-    .why-choose {background:#f9f9fc; padding:18px; border-radius:9px; margin-top:22px; box-shadow: 0 0 8px #b1b3be11;}
-    .services-list {display: flex; flex-wrap:wrap; gap:32px; }
-    .tab-pane {display: none;}
-    .tab-pane.active {display:block;}
-    @media (max-width:600px){
-      .content {padding:9px 2vw 20px 2vw;}
-      .tabs {flex-direction:column;}
-    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#0f1724;line-height:1.45}
+    a{color:inherit;text-decoration:none}
+    header{background:linear-gradient(90deg,#082a4a 0%, #113f6b 100%);color:#fff;padding:22px 16px;position:sticky;top:0;z-index:60}
+    .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand img{width:46px;height:46px;border-radius:8px;object-fit:cover}
+    .brand h1{font-size:18px;margin:0}
+    nav a{color:rgba(255,255,255,0.95);margin-left:12px;font-weight:600}
+    .hero{max-width:1100px;margin:28px auto;padding:28px 16px;display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center}
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}}
+    .hero-card{background:var(--card);border-radius:16px;padding:26px;box-shadow:0 8px 30px rgba(9,30,66,0.08)}
+    .kicker{display:inline-block;background:#e6f6f0;color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:700;margin-bottom:10px}
+    h2{color:var(--primary);margin:6px 0 8px 0}
+    p.lead{color:var(--muted);margin:0 0 18px 0}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer;border:none}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.wh{background:#25D366;color:#fff}
+    .btn.alt{background:#f3f4f6;color:#0f1724}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    @media (max-width:980px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:560px){.services-grid{grid-template-columns:1fr}}
+    .svc{background:var(--card);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,36,0.04)}
+    .features{max-width:1100px;margin:26px auto;padding:0 16px;display:grid;grid-template-columns:1fr 380px;gap:20px}
+    .feature-list{display:grid;gap:12px}
+    .trust{background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));padding:14px;border-radius:12px}
+    .contact-card{background:var(--primary);color:#fff;padding:18px;border-radius:12px}
+    .contact-card a{color:#fff;font-weight:700}
+    .about{max-width:1100px;margin:22px auto;padding:0 16px}
+    footer{max-width:1100px;margin:30px auto;padding:18px;color:var(--muted);text-align:center}
+    form input, form select, form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;margin-top:8px}
+    .small{font-size:13px;color:var(--muted)}
+    .row{display:flex;gap:12px}
+    @media (max-width:560px){.row{flex-direction:column}}
+    .badge{display:inline-block;background:#eef2ff;color:#3730a3;padding:6px 8px;border-radius:8px;font-weight:700;margin-bottom:10px}
+    .hero-figure{border-radius:14px;overflow:hidden;min-height:220px;background:linear-gradient(180deg,#eef7ff,#ffffff);display:flex;align-items:center;justify-content:center}
+    .tc{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    .testimonial{background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(9,30,66,0.05)}
+    .muted{color:var(--muted)}
   </style>
 </head>
 <body>
-  <!--Header-->
-  <div class="header">
-    <img src="https://cdn-icons-png.flaticon.com/512/453/453285.png" alt="Apex Legal Icon" loading="lazy">
-    <h1>APEX LEGAL SUPPORT</h1>
-    <div>Your Trusted Partner in Business Compliance & Growth</div>
-  </div>
-
-  <!--Tabs-->
-  <div class="tabs">
-    <button class="tab-btn active" onclick="showTab(event, 'about')">About</button>
-    <button class="tab-btn" onclick="showTab(event, 'services')">Services</button>
-    <button class="tab-btn" onclick="showTab(event, 'contact')">Contact</button>
-  </div>
-
-  <div class="content">
-    <!-- ABOUT Tab -->
-    <div id="about" class="tab-pane active">
-      <h2>Who We Are</h2>
-      <p>
-        At <b>Apex Legal Support</b>, we simplify the legal and regulatory landscape so businesses can focus on growth. Whether launching a startup or managing an enterprise, our consulting ensures full compliance, strategic positioning, and readiness to scale.
-      </p>
-      <div class="why-choose">
-        <h3>Why Choose Apex Legal Support?</h3>
-        <ul>
-          <li>End-to-End Compliance Solutions</li>
-          <li>Fast Turnaround & Transparent Processes</li>
-          <li>Expert Guidance Across Legal & Regulatory Sectors</li>
-          <li>Quick & Hassle-Free Process</li>
-          <li>Affordable Packages</li>
-          <li>100% Legal Compliance</li>
-        </ul>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <!-- Replace with your logo image if you have one -->
+        <img src="https://via.placeholder.com/120x120.png?text=Logo" alt="logo" />
+        <div>
+          <h1 style="margin:0;font-size:16px">Consult Chartered Services</h1>
+          <div class="small">GST • ITR • ROC • Payroll • Bookkeeping</div>
+        </div>
       </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- SERVICES Tab -->
-    <div id="services" class="tab-pane">
-      <h2>Our Services</h2>
-      <div class="services-list">
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-card">
+        <span class="kicker">Trusted Chartered Accountants</span>
+        <h2>CA-led accounting, compliance & tax services for startups and SMBs</h2>
+        <p class="lead">Fast GST/ITR/ROC filings • Monthly bookkeeping • Payroll, PF/ESI & compliance • Advisory for loans & funding — all handled by qualified CAs.</p>
 
-        <div class="service-section">
-          <h3>Business Registrations & Certifications</h3>
-          <ul>
-            <li>GST Registration & Return Filing</li>
-            <li>MSME/Udyam Registration</li>
-            <li>ISO Certification</li>
-            <li>Trade License & Health Trade License</li>
-            <li>Startup India Registration</li>
-          </ul>
+        <div class="cta-row">
+          <a class="btn primary" href="tel:+919810961385">Call: +91 98109 61385</a>
+          <a class="btn wh" target="_blank" href="https://wa.me/919810961385?text=Hi%20I%20need%20CA%20services">WhatsApp</a>
+          <a class="btn alt" href="#contact">Get Free Consultation</a>
         </div>
 
-        <div class="service-section">
-          <h3>Labour Law & Employee Welfare</h3>
-          <ul>
-            <li>PF & ESI Registration and Monthly Returns</li>
-            <li>Complete Labour Compliance Management</li>
-            <li>Shops & Establishment Act Registration</li>
-            <li>Contract Labour Licensing</li>
-          </ul>
-        </div>
-
-        <div class="service-section">
-          <h3>Government & Tender Support</h3>
-          <ul>
-            <li>PF & ESI Registration and Monthly Returns</li>
-            <li>Complete Labour Compliance Management</li>
-            <li>Shops & Establishment Act Registration</li>
-          </ul>
-        </div>
-
-        <div class="service-section">
-          <h3>Partnership Registration Services</h3>
-          <ul>
-            <li>Partnership Firm Registration</li>
-            <li>PAN & TAN Assistance</li>
-            <li>Partnership Deed Drafting</li>
-            <li>GST & MSME Registration</li>
-            <li>Compliance & Legal Support</li>
-          </ul>
+        <div class="services-grid" style="margin-top:18px">
+          <div class="svc">
+            <strong>GST Registration & Returns</strong>
+            <div class="small muted">Registration, monthly/quarterly filing & advisory</div>
+          </div>
+          <div class="svc">
+            <strong>Income Tax (ITR) Filing</strong>
+            <div class="small muted">Individual & Business returns, notices & refunds</div>
+          </div>
+          <div class="svc">
+            <strong>Company/ROC Filings</strong>
+            <div class="small muted">MCA filings, annual compliances & ROC returns</div>
+          </div>
+          <div class="svc">
+            <strong>Payroll, PF & ESI</strong>
+            <div class="small muted">Payroll processing, statutory returns & payroll reports</div>
+          </div>
+          <div class="svc">
+            <strong>Bookkeeping & MIS</strong>
+            <div class="small muted">Day-to-day accounting, reconciliations & financial reports</div>
+          </div>
+          <div class="svc">
+            <strong>Business Advisory</strong>
+            <div class="small muted">Loan documentation, funding advisory & valuation support</div>
+          </div>
         </div>
       </div>
-      <div style="margin-top:22px;">
-        <label for="serviceDrop"><b>Need Help With a Specific Service?</b></label><br>
-        <select id="serviceDrop" style="margin-top:7px; padding:7px; font-size:1em;">
-          <option value="">Select Service</option>
-          <option>GST Registration & Return Filing</option>
-          <option>MSME/Udyam Registration</option>
-          <option>ISO Certification</option>
-          <option>Trade License & Health Trade License</option>
-          <option>Startup India Registration</option>
-          <option>PF & ESI Registration</option>
-          <option>Complete Labour Compliance Management</option>
-          <option>Shops & Establishment Act Registration</option>
-          <option>Contract Labour Licensing</option>
-          <option>Partnership Firm Registration</option>
-          <option>PAN & TAN Assistance</option>
-          <option>Partnership Deed Drafting</option>
-          <option>Compliance & Legal Support</option>
-        </select>
-        <div class="contact-btns" style="margin-top:16px;">
-          <a href="tel:+919810961385" class="cta-btn">Call Akshay</a>
-          <a href="tel:+918745095028" class="cta-btn">Call Aman</a>
-          <a id="wsbtn" class="cta-btn whatsapp" href="https://wa.me/919810961385?text=I'm%20interested%20in%20Apex%20Legal%20Support%20services" target="_blank">WhatsApp Akshay</a>
-          <a href="#" class="cta-btn pay" id="payBtn">Pay Online</a>
-        </div>
-      </div>
-    </div>
 
-    <!-- CONTACT Tab -->
-    <div id="contact" class="tab-pane">
-      <h2>Contact Us</h2>
-      <div class="contact-card">
-        <div style="font-size:1.15em;"><b>Akshay Kumar</b></div>
-        <a href="mailto:apexlegalsuport@gmail.com" style="color:var(--primary);text-decoration:none;">apexlegalsuport@gmail.com</a><br>
-        <span style="font-size:1.08em;font-weight:600;">+91 9810961385</span><br>
-        <span style="font-size:1.08em;font-weight:600;">+91 8745095028</span>
-        <div class="contact-btns" style="margin-top:16px;">
-          <a href="tel:+919810961385" class="cta-btn">Call Akshay</a>
-          <a href="tel:+918745095028" class="cta-btn">Call Aman</a>
-          <a class="cta-btn whatsapp" href="https://wa.me/919810961385?text=I%20want%20to%20inquire%20about%20services" target="_blank">WhatsApp Akshay</a>
+      <!-- RIGHT CONTACT / LEAD FORM -->
+      <aside>
+        <div class="contact-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <div>
+              <div class="badge">Free 15-min CA call</div>
+              <h3 style="margin:6px 0 0 0">Book a free callback</h3>
+            </div>
+            <div class="small muted">Open 9am–7pm</div>
+          </div>
+
+          <form id="leadForm" onsubmit="event.preventDefault(); submitLead();">
+            <input id="name" placeholder="Your name" required />
+            <input id="phone" placeholder="Mobile (e.g. +9198...)" required />
+            <input id="email" type="email" placeholder="Email (optional)" />
+            <select id="service">
+              <option value="">Select service</option>
+              <option>GST Registration</option>
+              <option>ITR Filing</option>
+              <option>Company ROC</option>
+              <option>Payroll & Statutory</option>
+              <option>Bookkeeping</option>
+              <option>Business Advisory</option>
+            </select>
+            <textarea id="message" rows="3" placeholder="Short message (optional)"></textarea>
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button class="btn primary" type="submit">Request Callback</button>
+              <a class="btn wh" id="wsLink" target="_blank" href="https://wa.me/919810961385?text=Hello,%20I%20need%20accounting%20services">WhatsApp</a>
+            </div>
+            <div class="small muted" style="margin-top:8px">Or call: <a style="color:#fff;font-weight:700" href="tel:+919810961385">+91 98109 61385</a></div>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <!-- FEATURES & HOW -->
+    <section class="features" id="how">
+      <div>
+        <h3>How we work</h3>
+        <div class="feature-list">
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <div style="font-weight:800;font-size:20px;color:var(--primary)">1</div>
+            <div>
+              <strong>Quick onboarding</strong>
+              <div class="small muted">Share minimal documents via secure link — we set you up in 24–72 hours.</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <div style="font-weight:800;font-size:20px;color:var(--primary)">2</div>
+            <div>
+              <strong>CA-reviewed processes</strong>
+              <div class="small muted">All filings and advisories are CA-reviewed before submission.</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <div style="font-weight:800;font-size:20px;color:var(--primary)">3</div>
+            <div>
+              <strong>Monthly reports & support</strong>
+              <div class="small muted">Get MIS dashboards & ongoing advisory for growth & compliance.</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!--Footer-->
-  <div style="text-align:center; color:#888; padding:20px 0 8px 0; font-size:1em;">
-    &copy; 2025 APEX LEGAL SUPPORT
-  </div>
+
+      <aside>
+        <div class="trust">
+          <h4 style="margin:0 0 6px 0">Trusted by</h4>
+          <div class="tc" style="margin-top:8px">
+            <img src="https://via.placeholder.com/100x40?text=Client+1" alt="client" />
+            <img src="https://via.placeholder.com/100x40?text=Client+2" alt="client" />
+            <img src="https://via.placeholder.com/100x40?text=Client+3" alt="client" />
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="testimonial">
+              <strong>“Fast turnaround and clear guidance — saved us time and penalties.”</strong>
+              <div class="small muted">— Startup Founder</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- PRICING (SAMPLE) -->
+    <section class="about" id="pricing">
+      <h3>Pricing & plans</h3>
+      <p class="muted">Simple plans for startups and micro businesses. Custom quotes for complex requirements.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px">
+        <div class="svc">
+          <strong>Basic</strong>
+          <div class="small muted">Bookkeeping (upto 100 trx/mo) • GST return</div>
+          <div style="margin-top:12px;font-size:18px;font-weight:800">₹2,499 / mo</div>
+        </div>
+        <div class="svc">
+          <strong>Growth</strong>
+          <div class="small muted">Everything in Basic + Payroll • ITR filing</div>
+          <div style="margin-top:12px;font-size:18px;font-weight:800">₹6,999 / mo</div>
+        </div>
+        <div class="svc">
+          <strong>Custom</strong>
+          <div class="small muted">Tailored packages for firms & fast-scaling startups</div>
+          <div style="margin-top:12px;font-size:18px;font-weight:800">Contact for quote</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="about" id="contact">
+      <h3>Contact & office</h3>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px">
+        <div>
+          <p class="small muted">Need help right away? Call or WhatsApp us:</p>
+          <p><strong>Akshay Kumar</strong><br /><a href="tel:+919810961385">+91 98109 61385</a></p>
+          <p><strong>Email</strong><br /><a href="mailto:apexlegalsupport@gmail.com">apexlegalsupport@gmail.com</a></p>
+          <h4 style="margin-top:18px">Write to us</h4>
+
+          <!-- Simple contact form (non-functional without backend) -->
+          <form onsubmit="event.preventDefault(); alert('Thank you — we will contact you soon!');">
+            <div class="row">
+              <input placeholder="Name" required />
+              <input placeholder="Phone" required />
+            </div>
+            <input type="email" placeholder="Email (optional)" />
+            <textarea rows="4" placeholder="How can we help?"></textarea>
+            <div style="margin-top:10px"><button class="btn primary" type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+        <aside>
+          <div class="svc">
+            <strong>Office Hours</strong>
+            <div class="small muted" style="margin-top:6px">Mon–Sat: 9:00 AM – 7:00 PM</div>
+            <div style="margin-top:12px">
+              <strong>Address</strong>
+              <div class="small muted">Plot / Street, City - PIN (Update with your address)</div>
+            </div>
+
+            <div style="margin-top:12px">
+              <strong>Follow</strong>
+              <div class="small muted" style="margin-top:8px">LinkedIn • Facebook • Instagram</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Consult Chartered Services — All rights reserved • <span class="small muted">Made with care</span>
+  </footer>
+
   <script>
-    // Tabs logic
-    function showTab(evt, tab) {
-      document.querySelectorAll('.tab-btn').forEach(btn=>btn.classList.remove('active'));
-      evt.currentTarget.classList.add('active');
-      document.querySelectorAll('.tab-pane').forEach(pane=>pane.classList.remove('active'));
-      document.getElementById(tab).classList.add('active');
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Lead form simple client-side handler (replace with real backend)
+    function submitLead() {
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const svc = document.getElementById('service').value;
+      const msg = document.getElementById('message').value.trim();
+
+      // Basic validation
+      if (!name || !phone) {
+        alert('Please enter name and phone.');
+        return;
+      }
+
+      // Open WhatsApp prefilled as fallback for lead capture
+      const text = encodeURIComponent(`Lead: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${svc}\nMessage: ${msg}`);
+      window.open('https://wa.me/919810961385?text=' + text, '_blank');
     }
-    // WhatsApp dynamic on Service select
-    const wsbtn = document.getElementById('wsbtn');
-    const serviceDrop = document.getElementById('serviceDrop');
-    if(wsbtn && serviceDrop) {
-      serviceDrop.addEventListener('change', function() {
-        var service = encodeURIComponent('I am interested in: ' + (serviceDrop.value || 'Apex Legal Support services') + '. Please connect.');
-        wsbtn.href = 'https://wa.me/919810961385?text=' + service;
-      });
-    }
-    // Payment Button logic
-    document.getElementById('payBtn').onclick = function(e){
-      e.preventDefault();
-      // Replace this URL with your payment provider or payment page link
-      window.open('https://your-payment-link.com','_blank');
-    };
+
+    // Update WhatsApp link on page load (optional)
+    document.getElementById('wsLink').href = 'https://wa.me/919810961385?text=Hi,%20I%20would%20like%20to%20know%20about%20your%20services';
   </script>
 </body>
 </html>
