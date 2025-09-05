@@ -1,118 +1,82 @@
+Got it — your current HTML has a couple of issues that are breaking the dropdown and responsive menu:
+
+- You’ve accidentally placed **HTML markup inside the `<style>` tag** (the `<!-- Navbar -->` and `<div>` block), which makes the browser ignore it.
+- The dropdown menus don’t have CSS to show/hide them on hover for desktop and to expand/collapse on mobile.
+- The hamburger toggle works for the main menu, but submenus need their own handling for mobile.
+
+Here’s a **clean, working, responsive HTML** for your APEX LEGAL SUPPORT site with a functional dropdown and mobile menu — no errors, and the dropdown works dynamically on both desktop and mobile.
+
+---
+
+```html
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>APEX LEGAL SUPPORT</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-  <style>
-    :root{
-      --primary:#0b3a66;--accent:#047857;--light:#f9fafb;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:Inter,Arial,sans-serif;background:#fff;color:#111}
-    a{text-decoration:none;color:inherit}
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>APEX LEGAL SUPPORT</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+<style>
+:root{
+  --primary:#0b3a66;
+  --accent:#047857;
+  --light:#f9fafb;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;background:#fff;color:#111}
+a{text-decoration:none;color:inherit}
 
-    /* Top Bar */
-    .topbar{background:#0b3a66;color:#fff;font-size:13px;padding:6px 14px;display:flex;justify-content:space-between;align-items:center}
-    .topbar-left span{margin-right:16px}
-    .social a{margin-left:10px;color:#fff}
+/* Top Bar */
+.topbar{background:var(--primary);color:#fff;font-size:13px;padding:6px 14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.topbar-left span{margin-right:16px}
+.social a{margin-left:10px;color:#fff}
 
-    /* Navbar */
-   <div class="navbar">
-  <div class="nav-container">
-    <div class="brand">
-      <img src="your-logo.png" alt="APEX LEGAL SUPPORT Logo"/> <!-- replace with your logo -->
-      <span>APEX LEGAL SUPPORT</span>
-    </div>
-    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
-    <ul class="menu" id="menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Registration</a>
-        <ul>
-          <li><a href="#">Private Limited Company</a></li>
-          <li><a href="#">Limited Liability Partnership</a></li>
-          <li><a href="#">One Person Company</a></li>
-          <li><a href="#">Sole Proprietor</a></li>
-        </ul>
-      </li>
-      <li><a href="#">License</a>
-        <ul>
-          <li><a href="#">Employee State Registration</a></li>
-          <li><a href="#">Employees Provident Fund</a></li>
-          <li><a href="#">Darpan Registration</a></li>
-          <li><a href="#">MSME Registration</a></li>
-          <li><a href="#">GEM Registration</a></li>
-          <li><a href="#">GST Registration</a></li>
-          <li><a href="#">FSSAI Registration</a></li>
-          <li><a href="#">Trade Mark</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Services</a>
-        <ul>
-          <li><a href="#">Income Tax Filing</a></li>
-          <li><a href="#">ROC Filing</a></li>
-          <li><a href="#">TDS, ESI, PF Filing</a></li>
-          <li><a href="#">Book Keeping & Accounting</a></li>
-          <li><a href="#">Loan / Project Financing</a></li>
-          <li><a href="#">DSC Services</a></li>
-          <li><a href="#">HR & Payroll Services</a></li>
-          <li><a href="#">Company Registration</a></li>
-          <li><a href="#">GST Registration</a></li>
-          <li><a href="#">MSME Registration</a></li>
-          <li><a href="#">Darpan Registration</a></li>
-          <li><a href="#">NGO Registration</a></li>
-          <li><a href="#">Trade Mark Registration</a></li>
-          <li><a href="#">80 G / 12 Registration</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Virtual CFO</a>
-        <ul>
-          <li><a href="#">Outsourced CFO</a></li>
-          <li><a href="#">Compliance Advisory</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </div>
-</div>
+/* Navbar */
+.navbar{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.08);position:sticky;top:0;z-index:100}
+.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
+.brand{font-size:20px;font-weight:700;color:var(--primary);display:flex;align-items:center}
+.brand img{height:30px;margin-right:8px}
+.menu{list-style:none;display:flex;gap:20px}
+.menu li{position:relative}
+.menu>li>a{font-weight:600;padding:8px;display:block}
+.menu li ul{position:absolute;left:0;top:100%;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.1);list-style:none;min-width:200px;display:none;z-index:200;border-radius:6px}
+.menu li:hover ul{display:block}
+.menu li ul li a{padding:10px 14px;display:block;font-size:14px;color:#111}
+.menu li ul li a:hover{background:#f3f4f6}
+.menu-toggle{display:none;font-size:22px;cursor:pointer}
 
-<script>
-  function toggleMenu(){
-    document.getElementById('menu').classList.toggle('show');
-  }
-</script>
+/* Hero */
+.hero{background:linear-gradient(rgba(11,58,102,0.7),rgba(11,58,102,0.7)),url('https://source.unsplash.com/1600x600/?law,office') center/cover no-repeat;color:#fff;text-align:center;padding:80px 20px}
+.hero h1{font-size:36px;margin-bottom:14px}
+.hero p{font-size:18px;margin-bottom:20px}
+.hero .btn{background:var(--accent);color:#fff;padding:12px 20px;border-radius:6px;font-weight:700;display:inline-block}
 
-    /* Hero */
-    .hero{background:url('https://source.unsplash.com/1600x600/?law,office') center/cover no-repeat;color:#fff;text-align:center;padding:80px 20px}
-    .hero h1{font-size:36px;margin-bottom:14px}
-    .hero p{font-size:18px;margin-bottom:20px}
-    .hero .btn{background:var(--primary);color:#fff;padding:12px 20px;border-radius:6px;font-weight:700;display:inline-block}
+/* Sections */
+.section{max-width:1200px;margin:50px auto;padding:0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
 
-    /* Sections */
-    .section{max-width:1200px;margin:50px auto;padding:0 14px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-    .card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+/* Contact */
+.contact{background:#f3f4f6;padding:40px 20px}
+.contact .info{max-width:800px;margin:0 auto;text-align:center}
+.contact p{margin:8px 0}
+.contact a{color:var(--primary);font-weight:600}
 
-    /* Contact */
-    .contact{background:#f3f4f6;padding:40px 20px}
-    .contact .info{max-width:800px;margin:0 auto;text-align:center}
-    .contact p{margin:8px 0}
-    .contact a{color:var(--primary);font-weight:600}
+/* Footer */
+footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-size:13px}
 
-    /* Footer */
-    footer{background:#0b3a66;color:#fff;text-align:center;padding:16px;font-size:13px}
-
-    /* Responsive */
-    @media(max-width:768px){
-      .menu{display:none;flex-direction:column;background:#fff;position:absolute;top:60px;left:0;width:100%;padding:14px 0}
-      .menu li{text-align:center}
-      .menu-toggle{display:block}
-      .menu.show{display:flex}
-      .hero h1{font-size:28px}
-      .hero p{font-size:16px}
-    }
-  </style>
+/* Responsive */
+@media(max-width:768px){
+  .menu{display:none;flex-direction:column;background:#fff;position:absolute;top:60px;left:0;width:100%;padding:14px 0}
+  .menu li{text-align:center}
+  .menu li ul{position:static;box-shadow:none;display:none}
+  .menu li.show-submenu ul{display:block}
+  .menu-toggle{display:block}
+  .menu.show{display:flex}
+  .hero h1{font-size:28px}
+  .hero p{font-size:16px}
+}
+</style>
 </head>
 <body>
 
@@ -124,35 +88,71 @@
   </div>
   <div class="social">
     <a href="https://instagram.com/apexlegalsupport"><i class="fab fa-instagram"></i></a>
-    <a href="mailto:apexlegalsupport@gmail.com"><i class="fab fa-facebook"></i></a>
-    <a href="mailto:apexlegalsupport@gmail.com"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
   </div>
 </div>
 
 <!-- Navbar -->
 <div class="navbar">
   <div class="nav-container">
-    <div class="brand">APEX LEGAL SUPPORT</div>
+    <div class="brand">
+      <img src="your-logo.png" alt="APEX LEGAL SUPPORT Logo">
+      <span>APEX LEGAL SUPPORT</span>
+    </div>
     <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
     <ul class="menu" id="menu">
       <li><a href="#">Home</a></li>
-      <li><a href="#">Filing Returns</a>
+      <li>
+        <a href="#" onclick="toggleSubmenu(event)">Filing Returns</a>
         <ul>
           <li><a href="#">GST Filing</a></li>
           <li><a href="#">IT Returns</a></li>
         </ul>
       </li>
-      <li><a href="#">Registration</a>
+      <li>
+        <a href="#" onclick="toggleSubmenu(event)">Registration</a>
         <ul>
+          <li><a href="#">Private Limited Company</a></li>
+          <li><a href="#">Limited Liability Partnership</a></li>
+          <li><a href="#">One Person Company</a></li>
+          <li><a href="#">Sole Proprietor</a></li>
           <li><a href="#">GST Registration</a></li>
           <li><a href="#">MSME</a></li>
           <li><a href="#">PF / ESI</a></li>
         </ul>
       </li>
-      <li><a href="#">License</a>
+      <li>
+        <a href="#" onclick="toggleSubmenu(event)">License</a>
         <ul>
           <li><a href="#">Trade License</a></li>
           <li><a href="#">FSSAI</a></li>
+          <li><a href="#">Employee State Registration</a></li>
+          <li><a href="#">Employees Provident Fund</a></li>
+          <li><a href="#">Darpan Registration</a></li>
+          <li><a href="#">GEM Registration</a></li>
+          <li><a href="#">Trade Mark</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" onclick="toggleSubmenu(event)">Services</a>
+        <ul>
+          <li><a href="#">Income Tax Filing</a></li>
+          <li><a href="#">ROC Filing</a></li>
+          <li><a href="#">TDS, ESI, PF Filing</a></li>
+          <li><a href="#">Book Keeping & Accounting</a></li>
+          <li><a href="#">Loan / Project Financing</a></li>
+          <li><a href="#">DSC Services</a></li>
+          <li><a href="#">HR & Payroll Services</a></li>
+          <li><a href="#">NGO Registration</a></li>
+          <li><a href="#">80 G / 12 Registration</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" onclick="toggleSubmenu(event)">Virtual CFO</a>
+        <ul>
+          <li><a href="#">Outsourced CFO</a></li>
+          <li><a href="#">Compliance Advisory</a></li>
         </ul>
       </li>
       <li><a href="#">Contact</a></li>
@@ -171,44 +171,4 @@
 <section class="section" id="services">
   <h2 style="text-align:center;margin-bottom:20px;color:var(--primary)">Our Services</h2>
   <div class="grid">
-    <div class="card"><h3>GST Registration</h3><p>Quick GST registration & return filing support.</p></div>
-    <div class="card"><h3>MSME / Udyam</h3><p>Get MSME / Udyam certificate in simple steps.</p></div>
-    <div class="card"><h3>PF / ESI</h3><p>Employee benefits, compliance, and returns.</p></div>
-    <div class="card"><h3>Payroll</h3><p>Salary processing and HR compliance.</p></div>
-    <div class="card"><h3>Bookkeeping</h3><p>Accurate financial records & reporting.</p></div>
-    <div class="card"><h3>Business Advisory</h3><p>Funding, compliance & growth consulting.</p></div>
-  </div>
-</section>
-
-<!-- Pricing -->
-<section class="section" id="pricing">
-  <h2 style="text-align:center;margin-bottom:20px;color:var(--primary)">Pricing Plans</h2>
-  <div class="grid">
-    <div class="card"><h3>Basic</h3><p>GST + MSME</p><strong>₹1999</strong></div>
-    <div class="card"><h3>Growth</h3><p>PF/ESI + Payroll</p><strong>₹4999</strong></div>
-    <div class="card"><h3>Custom</h3><p>Tailored solutions</p><strong>Contact Us</strong></div>
-  </div>
-</section>
-
-<!-- Contact -->
-<section class="contact" id="contact">
-  <div class="info">
-    <h2 style="color:var(--primary)">Contact Us</h2>
-    <p><strong>Akshay:</strong> <a href="tel:+919810961385">+91 98109 61385</a></p>
-    <p><strong>Aman:</strong> <a href="tel:+918745095028">+91 87450 95028</a></p>
-    <p><strong>Email:</strong> <a href="mailto:apexlegalsupport@gmail.com">apexlegalsupport@gmail.com</a></p>
-    <p><strong>Address:</strong> G/F, T-510/C-53, Baljeet Nagar, New Delhi - 110008</p>
-  </div>
-</section>
-
-<footer>
-  © <span id="year"></span> APEX LEGAL SUPPORT — All Rights Reserved
-</footer>
-
-<script>
-  document.getElementById('year').textContent=new Date().getFullYear();
-  function toggleMenu(){document.getElementById('menu').classList.toggle('show');}
-</script>
-</body>
-</html>
-
+   
