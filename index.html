@@ -19,16 +19,69 @@
     .social a{margin-left:10px;color:#fff}
 
     /* Navbar */
-    .navbar{background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.08);position:sticky;top:0;z-index:100}
-    .nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:10px 14px}
-    .brand{font-size:20px;font-weight:700;color:var(--primary)}
-    .menu{list-style:none;display:flex;gap:20px}
-    .menu li{position:relative}
-    .menu>li>a{font-weight:600;padding:8px;display:block}
-    .menu li ul{position:absolute;left:0;top:100%;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.1);list-style:none;min-width:200px;display:none;z-index:200}
-    .menu li:hover ul{display:block}
-    .menu li ul li a{padding:10px 14px;display:block;font-size:14px;color:#111}
-    .menu-toggle{display:none;font-size:20px;cursor:pointer}
+   <div class="navbar">
+  <div class="nav-container">
+    <div class="brand">
+      <img src="your-logo.png" alt="APEX LEGAL SUPPORT Logo"/> <!-- replace with your logo -->
+      <span>APEX LEGAL SUPPORT</span>
+    </div>
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <ul class="menu" id="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Registration</a>
+        <ul>
+          <li><a href="#">Private Limited Company</a></li>
+          <li><a href="#">Limited Liability Partnership</a></li>
+          <li><a href="#">One Person Company</a></li>
+          <li><a href="#">Sole Proprietor</a></li>
+        </ul>
+      </li>
+      <li><a href="#">License</a>
+        <ul>
+          <li><a href="#">Employee State Registration</a></li>
+          <li><a href="#">Employees Provident Fund</a></li>
+          <li><a href="#">Darpan Registration</a></li>
+          <li><a href="#">MSME Registration</a></li>
+          <li><a href="#">GEM Registration</a></li>
+          <li><a href="#">GST Registration</a></li>
+          <li><a href="#">FSSAI Registration</a></li>
+          <li><a href="#">Trade Mark</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Services</a>
+        <ul>
+          <li><a href="#">Income Tax Filing</a></li>
+          <li><a href="#">ROC Filing</a></li>
+          <li><a href="#">TDS, ESI, PF Filing</a></li>
+          <li><a href="#">Book Keeping & Accounting</a></li>
+          <li><a href="#">Loan / Project Financing</a></li>
+          <li><a href="#">DSC Services</a></li>
+          <li><a href="#">HR & Payroll Services</a></li>
+          <li><a href="#">Company Registration</a></li>
+          <li><a href="#">GST Registration</a></li>
+          <li><a href="#">MSME Registration</a></li>
+          <li><a href="#">Darpan Registration</a></li>
+          <li><a href="#">NGO Registration</a></li>
+          <li><a href="#">Trade Mark Registration</a></li>
+          <li><a href="#">80 G / 12 Registration</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Virtual CFO</a>
+        <ul>
+          <li><a href="#">Outsourced CFO</a></li>
+          <li><a href="#">Compliance Advisory</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  function toggleMenu(){
+    document.getElementById('menu').classList.toggle('show');
+  }
+</script>
 
     /* Hero */
     .hero{background:url('https://source.unsplash.com/1600x600/?law,office') center/cover no-repeat;color:#fff;text-align:center;padding:80px 20px}
@@ -158,3 +211,4 @@
 </script>
 </body>
 </html>
+
