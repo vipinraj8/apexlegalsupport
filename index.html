@@ -1,14 +1,3 @@
-Got it — your current HTML has a couple of issues that are breaking the dropdown and responsive menu:
-
-- You’ve accidentally placed **HTML markup inside the `<style>` tag** (the `<!-- Navbar -->` and `<div>` block), which makes the browser ignore it.
-- The dropdown menus don’t have CSS to show/hide them on hover for desktop and to expand/collapse on mobile.
-- The hamburger toggle works for the main menu, but submenus need their own handling for mobile.
-
-Here’s a **clean, working, responsive HTML** for your APEX LEGAL SUPPORT site with a functional dropdown and mobile menu — no errors, and the dropdown works dynamically on both desktop and mobile.
-
----
-
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,7 +28,7 @@ a{text-decoration:none;color:inherit}
 .menu{list-style:none;display:flex;gap:20px}
 .menu li{position:relative}
 .menu>li>a{font-weight:600;padding:8px;display:block}
-.menu li ul{position:absolute;left:0;top:100%;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.1);list-style:none;min-width:200px;display:none;z-index:200;border-radius:6px}
+.menu li ul{position:absolute;left:0;top:100%;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.1);list-style:none;min-width:220px;display:none;z-index:200;border-radius:6px}
 .menu li:hover ul{display:block}
 .menu li ul li a{padding:10px 14px;display:block;font-size:14px;color:#111}
 .menu li ul li a:hover{background:#f3f4f6}
@@ -54,7 +43,8 @@ a{text-decoration:none;color:inherit}
 /* Sections */
 .section{max-width:1200px;margin:50px auto;padding:0 14px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);transition:0.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 6px 14px rgba(0,0,0,0.12)}
 
 /* Contact */
 .contact{background:#f3f4f6;padding:40px 20px}
@@ -83,7 +73,7 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
 <!-- Top Bar -->
 <div class="topbar">
   <div class="topbar-left">
-    <span><i class="fa fa-phone"></i> +91 98109 61385 | +91 87450 95028</span>
+    <span><i class="fa fa-phone"></i> +91 9810961385 | +91 8745095028</span>
     <span><i class="fa fa-envelope"></i> apexlegalsupport@gmail.com</span>
   </div>
   <div class="social">
@@ -104,33 +94,24 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
     <ul class="menu" id="menu">
       <li><a href="#">Home</a></li>
       <li>
-        <a href="#" onclick="toggleSubmenu(event)">Filing Returns</a>
-        <ul>
-          <li><a href="#">GST Filing</a></li>
-          <li><a href="#">IT Returns</a></li>
-        </ul>
-      </li>
-      <li>
         <a href="#" onclick="toggleSubmenu(event)">Registration</a>
         <ul>
           <li><a href="#">Private Limited Company</a></li>
           <li><a href="#">Limited Liability Partnership</a></li>
           <li><a href="#">One Person Company</a></li>
           <li><a href="#">Sole Proprietor</a></li>
-          <li><a href="#">GST Registration</a></li>
-          <li><a href="#">MSME</a></li>
-          <li><a href="#">PF / ESI</a></li>
         </ul>
       </li>
       <li>
         <a href="#" onclick="toggleSubmenu(event)">License</a>
         <ul>
-          <li><a href="#">Trade License</a></li>
-          <li><a href="#">FSSAI</a></li>
           <li><a href="#">Employee State Registration</a></li>
           <li><a href="#">Employees Provident Fund</a></li>
           <li><a href="#">Darpan Registration</a></li>
+          <li><a href="#">MSME Registration</a></li>
           <li><a href="#">GEM Registration</a></li>
+          <li><a href="#">GST Registration</a></li>
+          <li><a href="#">FSSAI Registration</a></li>
           <li><a href="#">Trade Mark</a></li>
         </ul>
       </li>
@@ -144,7 +125,12 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
           <li><a href="#">Loan / Project Financing</a></li>
           <li><a href="#">DSC Services</a></li>
           <li><a href="#">HR & Payroll Services</a></li>
+          <li><a href="#">Company Registration</a></li>
+          <li><a href="#">GST Registration</a></li>
+          <li><a href="#">MSME Registration</a></li>
+          <li><a href="#">Darpan Registration</a></li>
           <li><a href="#">NGO Registration</a></li>
+          <li><a href="#">Trade Mark Registration</a></li>
           <li><a href="#">80 G / 12 Registration</a></li>
         </ul>
       </li>
@@ -155,7 +141,7 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
           <li><a href="#">Compliance Advisory</a></li>
         </ul>
       </li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </div>
@@ -171,4 +157,52 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
 <section class="section" id="services">
   <h2 style="text-align:center;margin-bottom:20px;color:var(--primary)">Our Services</h2>
   <div class="grid">
-   
+    <div class="card">Income Tax Filing</div>
+    <div class="card">ROC Filing</div>
+    <div class="card">TDS, ESI, PF Filing</div>
+    <div class="card">Book Keeping & Accounting</div>
+    <div class="card">Loan / Project Financing</div>
+    <div class="card">DSC Services</div>
+    <div class="card">HR & Payroll Services</div>
+    <div class="card">Company Registration</div>
+    <div class="card">GST Registration</div>
+    <div class="card">MSME Registration</div>
+    <div class="card">Darpan Registration</div>
+    <div class="card">NGO Registration</div>
+    <div class="card">Trade Mark Registration</div>
+    <div class="card">80 G / 12 Registration</div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="info">
+    <h2>Contact Us</h2>
+    <p><i class="fa fa-phone"></i> +91 9810961385 | +91 8745095028</p>
+    <p><i class="fa fa-envelope"></i> apexlegalsupport@gmail.com</p>
+    <p><i class="fab fa-instagram"></i> <a href="https://instagram.com/apexlegalsupport">@apexlegalsupport</a></p>
+    <p><i class="fab fa-facebook"></i> <a href="#">Facebook</a></p>
+    <p><i class="fab fa-x-twitter"></i> <a href="#">Twitter</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 APEX Legal Support | All Rights Reserved</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+function toggleSubmenu(e){
+  if(window.innerWidth<=768){
+    e.preventDefault();
+    let parent=e.target.parentElement;
+    parent.classList.toggle("show-submenu");
+  }
+}
+</script>
+
+</body>
+</html>
