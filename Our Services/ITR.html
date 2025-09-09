@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ITR Filing Assistance | APEX Legal Support</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #0b3a66;
+      --accent: #047857;
+      --light: #f9fafb;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: #111;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Top Bar */
+    .topbar {
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      padding: 6px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .topbar-left span {
+      margin-right: 16px;
+    }
+    .social a {
+      margin-left: 10px;
+      color: #fff;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(11,58,102,0.7),rgba(11,58,102,0.7)),
+        url('https://source.unsplash.com/1600x600/?tax,finance,office') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .hero .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    /* Form Section */
+    .container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100%;
+    }
+    button:hover {
+      background: #059669;
+    }
+
+    /* WhatsApp Button */
+    .whatsapp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+      margin-top: 60px;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span><i class="fa fa-phone"></i> +91 98109 61385 | +91 87450 95028</span>
+      <span><i class="fa fa-envelope"></i> apexlegalsupport@gmail.com</span>
+    </div>
+    <div class="social">
+      <a href="https://instagram.com/apexlegalsupport"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Filing Income Tax Returns Made Easy</h1>
+    <p>Let our experts handle your tax filing, deductions, and compliance</p>
+    <p>Filing Income Tax Returns (ITR) is mandatory for individuals and businesses to report income, 
+      
+      claim deductions, and comply with tax regulations.
+      
+      Timely and accurate ITR filing helps avoid penalties and ensures smooth financial planning.
+      
+      At Consult Chartered, we offer hassle-free ITR filing services, 
+      
+      including tax computation, deductions optimization, 
+      
+      return preparation, and e-filing assistance.
+      
+      Our experts ensure compliance with the latest tax laws while helping you save on taxes legally.
+      
+      Need Assistance with ITR Filing? Contact us today!</p>
+    <a href="#form" class="btn">Get Started</a>
+  </section>
+
+  <!-- Form Section -->
+  <section class="container" id="form">
+    <h2>Apply for ITR Filing Assistance</h2>
+    <form action="https://formspree.io/f/yourFormID" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="service">Select Service</label>
+      <select id="service" name="service" required>
+        <option value="">- Select -</option>
+        <option value="ITR Filing">ITR Filing</option>
+        <option value="Tax Planning">Tax Planning</option>
+        <option value="Business Registration">Business Registration</option>
+        <option value="GST Filing">GST Filing</option>
+      </select>
+
+      <label for="message">Additional Information / Query</label>
+      <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+
+      <button type="submit">Apply</button>
+    </form>
+  </section>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/919810961385?text=Hello%20APEX%20Legal%20Support%2C%20I%20need%20help%20with%20ITR%20filing." class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> APEX LEGAL SUPPORT — All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
