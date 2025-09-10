@@ -6,11 +6,7 @@
 <title>APEX LEGAL SUPPORT</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
 <style>
-:root{
-  --primary:#0b3a66;
-  --accent:#047857;
-  --light:#f9fafb;
-}
+:root{--primary:#0b3a66;--accent:#047857;--light:#f9fafb}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Inter,Arial,sans-serif;background:#fff;color:#111}
 a{text-decoration:none;color:inherit}
@@ -39,12 +35,6 @@ a{text-decoration:none;color:inherit}
 .hero h1{font-size:36px;margin-bottom:14px}
 .hero p{font-size:18px;margin-bottom:20px}
 .hero .btn{background:var(--accent);color:#fff;padding:12px 20px;border-radius:6px;font-weight:700;display:inline-block}
-
-/* Sections */
-.section{max-width:1200px;margin:50px auto;padding:0 14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.08);transition:0.3s}
-.card:hover{transform:translateY(-4px);box-shadow:0 6px 14px rgba(0,0,0,0.12)}
 
 /* Contact */
 .contact{background:#f3f4f6;padding:40px 20px}
@@ -77,9 +67,9 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
     <span><i class="fa fa-envelope"></i> apexlegalsupport@gmail.com</span>
   </div>
   <div class="social">
-    <a href="https://instagram.com/apexlegalsupport"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/19TX3sWkiy/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-    <a href="https://x.com/apexlegalsuport?s=21"><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
   </div>
 </div>
 
@@ -87,7 +77,7 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
 <div class="navbar">
   <div class="nav-container">
     <div class="brand">
-      <img src="logo.png">
+      <img src="logo.png" alt="Logo">
       <span>APEX LEGAL SUPPORT</span>
     </div>
     <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
@@ -98,10 +88,10 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
       <li>
         <a href="#" onclick="toggleSubmenu(event)">Registration</a>
         <ul>
-          <li><a href="#">Private Limited Company</a></li>
-          <li><a href="#">Limited Liability Partnership</a></li>
-          <li><a href="#">One Person Company</a></li>
-          <li><a href="#">Sole Proprietor</a></li>
+          <li><a href="Registration/Private Limited Company.html">Private Limited Company</a></li>
+          <li><a href="Registration/Limited Liability Partnership.html">Limited Liability Partnership</a></li>
+          <li><a href="Registration/One Person Company.html">One Person Company</a></li>
+          <li><a href="Registration/Sole Proprietor.html">Sole Proprietor</a></li>
         </ul>
       </li>
 
@@ -109,13 +99,13 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
       <li>
         <a href="#" onclick="toggleSubmenu(event)">License</a>
         <ul>
-          <li><a href="#">Employee State Registration</a></li>
-          <li><a href="#">Employees Provident Fund</a></li>
-          <li><a href="#">MSME Registration</a></li>
-          <li><a href="#">GEM Registration</a></li>
-          <li><a href="#">GST Registration</a></li>
-          <li><a href="#">FSSAI Registration</a></li>
-          <li><a href="#">Trade Mark</a></li>
+          <li><a href="License/Employee State Registration.html">Employee State Registration</a></li>
+          <li><a href="License/Employees Provident Fund.html">Employees Provident Fund</a></li>
+          <li><a href="License/MSME Registration.html">MSME Registration</a></li>
+          <li><a href="License/GEM Registration.html">GEM Registration</a></li>
+          <li><a href="License/GST Registration.html">GST Registration</a></li>
+          <li><a href="License/FSSAI Registration.html">FSSAI Registration</a></li>
+          <li><a href="License/Trade Mark.html">Trade Mark</a></li>
         </ul>
       </li>
 
@@ -123,32 +113,30 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
       <li>
         <a href="#" onclick="toggleSubmenu(event)">Our Services</a>
         <ul>
-          <li><a href="#">Income Tax Filing</a></li>
-          <li><a href="#">TDS, ESI, PF Filing</a></li>
-          <li><a href="#">Book Keeping & Accounting</a></li>
-          <li><a href="#">DSC Services</a></li>
-          <li><a href="#">HR & Payroll Services</a></li>
-          <li><a href="#">Company Registration</a></li>
-          <li><a href="#">GST Registration</a></li>
-          <li><a href="#">MSME Registration</a></li>
-          <li><a href="#">NGO Registration</a></li>
-          <li><a href="#">Trade Mark Registration</a></li>
-          <!-- Government Tender inside Our Services -->
+          <li><a href="Our Services/Income Tax Filing.html">Income Tax Filing</a></li>
+          <li><a href="Our Services/TDS ESI PF Filing.html">TDS, ESI, PF Filing</a></li>
+          <li><a href="Our Services/Bookkeeping Accounting.html">Book Keeping & Accounting</a></li>
+          <li><a href="Our Services/DSC Services.html">DSC Services</a></li>
+          <li><a href="Our Services/HR Payroll.html">HR & Payroll Services</a></li>
+          <li><a href="Our Services/Company Registration.html">Company Registration</a></li>
+          <li><a href="Our Services/GST Registration.html">GST Registration</a></li>
+          <li><a href="Our Services/MSME Registration.html">MSME Registration</a></li>
+          <li><a href="Our Services/NGO Registration.html">NGO Registration</a></li>
+          <li><a href="Our Services/Trade Mark Registration.html">Trade Mark Registration</a></li>
           <li>
             <a href="#" onclick="toggleSubmenu(event)">Government Tender</a>
             <ul>
-              <li><a href="#">Gem Tender</a></li>
-              <li><a href="#">Compliance Support</a></li>
+              <li><a href="Our Services/Government Tender/Gem Tender.html">Gem Tender</a></li>
+              <li><a href="Our Services/Government Tender/Compliance Support.html">Compliance Support</a></li>
             </ul>
           </li>
         </ul>
       </li>
 
-      <li><a href="#">Mobile App</a></li>
+      <li><a href="Mobile App.html">Mobile App</a></li>
     </ul>
   </div>
 </div>
-
 
 <!-- Hero -->
 <section class="hero">
@@ -172,26 +160,17 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("show");
-}
-
-// Accordion Submenu Logic
+function toggleMenu(){document.getElementById("menu").classList.toggle("show");}
 function toggleSubmenu(e){
   if(window.innerWidth<=768){
     e.preventDefault();
-    let parent = e.target.parentElement;
-
-    // Close all other open submenus
+    let parent=e.target.parentElement;
     document.querySelectorAll("#menu li.show-submenu").forEach(item=>{
       if(item!==parent){item.classList.remove("show-submenu");}
     });
-
-    // Toggle current submenu
     parent.classList.toggle("show-submenu");
   }
 }
 </script>
-
 </body>
 </html>
