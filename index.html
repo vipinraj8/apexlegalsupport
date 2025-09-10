@@ -57,9 +57,9 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
 
 /* Responsive */
 @media(max-width:768px){
-  .menu{display:none;flex-direction:column;background:#fff;position:absolute;top:60px;left:0;width:100%;padding:14px 0}
-  .menu li{text-align:center}
-  .menu li ul{position:static;box-shadow:none;display:none}
+  .menu{display:none;flex-direction:column;background:#fff;position:absolute;top:60px;left:0;width:100%;padding:14px 0;max-height:80vh;overflow-y:auto}
+  .menu li{text-align:center;position:relative}
+  .menu li ul{position:static;box-shadow:none;display:none;border-top:1px solid #eee}
   .menu li.show-submenu ul{display:block}
   .menu-toggle{display:block}
   .menu.show{display:flex}
@@ -98,10 +98,10 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
       <li>
         <a href="#" onclick="toggleSubmenu(event)">Registration</a>
         <ul>
-          <li><a href="Registration/Private Limited Company.html">Private Limited Company</a></li>
-          <li><a href="Registration/Limited Liability Partnership.html">Limited Liability Partnership</a></li>
-          <li><a href="Registration/One Person Company.html">One Person Company</a></li>
-          <li><a href="Registration/Sole Proprietor.html">Sole Proprietor</a></li>
+          <li><a href="#">Private Limited Company</a></li>
+          <li><a href="#">Limited Liability Partnership</a></li>
+          <li><a href="#">One Person Company</a></li>
+          <li><a href="#">Sole Proprietor</a></li>
         </ul>
       </li>
 
@@ -109,13 +109,13 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
       <li>
         <a href="#" onclick="toggleSubmenu(event)">License</a>
         <ul>
-          <li><a href="License/Employee State Registration.html">Employee State Registration</a></li>
-          <li><a href="License/Employees Provident Fund.html">Employees Provident Fund</a></li>
-          <li><a href="License/MSME Registration.html">MSME Registration</a></li>
-          <li><a href="License/GEM Registration.html">GEM Registration</a></li>
-          <li><a href="License/GST Registration.html">GST Registration</a></li>
-          <li><a href="License/FSSAI Registration.html">FSSAI Registration</a></li>
-          <li><a href="License/Trade Mark.html">Trade Mark</a></li>
+          <li><a href="#">Employee State Registration</a></li>
+          <li><a href="#">Employees Provident Fund</a></li>
+          <li><a href="#">MSME Registration</a></li>
+          <li><a href="#">GEM Registration</a></li>
+          <li><a href="#">GST Registration</a></li>
+          <li><a href="#">FSSAI Registration</a></li>
+          <li><a href="#">Trade Mark</a></li>
         </ul>
       </li>
 
@@ -123,28 +123,27 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
       <li>
         <a href="#" onclick="toggleSubmenu(event)">Our Services</a>
         <ul>
-          <li><a href="Our Services/Income Tax Filing.html">Income Tax Filing</a></li>
-          <li><a href="Our Services/TDS, ESI, PF Filing.html">TDS, ESI, PF Filing</a></li>
-          <li><a href="Our Services/Book Keeping & Accounting.html">Book Keeping & Accounting</a></li>
-          <li><a href="Our Services/DSC Services.html">DSC Services</a></li>
-          <li><a href="Our Services/HR & Payroll Services.html">HR & Payroll Services</a></li>
-          <li><a href="Our Services/Company Registration.html">Company Registration</a></li>
-          <li><a href="Our Services/GST Registration.html">GST Registration</a></li>
-          <li><a href="Our Services/MSME Registration.html">MSME Registration</a></li>
-          <li><a href="Our Services/NGO Registration.html">NGO Registration</a></li>
-          <li><a href="Our Services/Trade Mark Registration.html">Trade Mark Registration</a></li>
+          <li><a href="#">Income Tax Filing</a></li>
+          <li><a href="#">TDS, ESI, PF Filing</a></li>
+          <li><a href="#">Book Keeping & Accounting</a></li>
+          <li><a href="#">DSC Services</a></li>
+          <li><a href="#">HR & Payroll Services</a></li>
+          <li><a href="#">Company Registration</a></li>
+          <li><a href="#">GST Registration</a></li>
+          <li><a href="#">MSME Registration</a></li>
+          <li><a href="#">NGO Registration</a></li>
+          <li><a href="#">Trade Mark Registration</a></li>
+          <!-- Government Tender inside Our Services -->
+          <li>
+            <a href="#" onclick="toggleSubmenu(event)">Government Tender</a>
+            <ul>
+              <li><a href="#">Gem Tender</a></li>
+              <li><a href="#">Compliance Support</a></li>
+            </ul>
+          </li>
         </ul>
       </li>
 
-      <!-- Virtual CFO -->
-      <li>
-        <a href="#" onclick="toggleSubmenu(event)">Government Tender</a>
-        <ul>
-          <li><a href="Government Tender/Gem Tender.html">Gem Tender</a></li>
-          <li><a href="Government Tender/compliance support.html">compliance support</a></li>
-        </ul>
-      </li>
-      
       <li><a href="#">Mobile App</a></li>
     </ul>
   </div>
@@ -156,27 +155,6 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
   <h1>Compliance & Legal Solutions</h1>
   <p>GST • MSME • PF/ESI • Payroll • Bookkeeping • Advisory</p>
   <a href="tel:+919810961385" class="btn">Call Us Now</a>
-</section>
-
-<!-- Services -->
-<section class="section" id="services">
-  <h2 style="text-align:center;margin-bottom:20px;color:var(--primary)">Our Services</h2>
-  <div class="grid">
-    <div class="card">Income Tax Filing</div>
-    <div class="card">ROC Filing</div>
-    <div class="card">TDS, ESI, PF Filing</div>
-    <div class="card">Book Keeping & Accounting</div>
-    <div class="card">Loan / Project Financing</div>
-    <div class="card">DSC Services</div>
-    <div class="card">HR & Payroll Services</div>
-    <div class="card">Company Registration</div>
-    <div class="card">GST Registration</div>
-    <div class="card">MSME Registration</div>
-    <div class="card">Darpan Registration</div>
-    <div class="card">NGO Registration</div>
-    <div class="card">Trade Mark Registration</div>
-    <div class="card">80 G / 12 Registration</div>
-  </div>
 </section>
 
 <!-- Contact -->
@@ -197,10 +175,19 @@ footer{background:var(--primary);color:#fff;text-align:center;padding:16px;font-
 function toggleMenu(){
   document.getElementById("menu").classList.toggle("show");
 }
+
+// Accordion Submenu Logic
 function toggleSubmenu(e){
   if(window.innerWidth<=768){
     e.preventDefault();
-    let parent=e.target.parentElement;
+    let parent = e.target.parentElement;
+
+    // Close all other open submenus
+    document.querySelectorAll("#menu li.show-submenu").forEach(item=>{
+      if(item!==parent){item.classList.remove("show-submenu");}
+    });
+
+    // Toggle current submenu
     parent.classList.toggle("show-submenu");
   }
 }
@@ -208,12 +195,3 @@ function toggleSubmenu(e){
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
